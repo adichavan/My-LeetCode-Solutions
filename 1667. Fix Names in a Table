@@ -1,0 +1,8 @@
+Approach:
+Used subtring to split and convert the first character to uppercase and the remaining to lowercase. The concatenate function combines both the substrings to generate the expected result.
+
+Code:
+select user_id, 
+concat(upper(substr(name,1,1)), lower(substr(name,2))) as name
+from Users
+order by user_id;
