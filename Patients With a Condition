@@ -1,0 +1,11 @@
+MySQL solution with wildcards
+
+Approach -
+The idea is to identify the words in 'conditions' column which contain 'DIAB1' in them. If we observe the table, 'DIAB1' also appears in first position or at the second position in the word. For eg. DIAB100 MYOP, ACNE DIAB100 etc.
+To capture both cases, 'like' clause is used with wildcards
+
+Code -
+select patient_id, patient_name, conditions
+from Patients
+where conditions like 'DIAB1%' or conditions like '% DIAB1%'
+order by patient_id;
